@@ -1,0 +1,190 @@
+
++++ '[' 2 -ne 2 ']'
++++ STATE=/data/disk1/private/ayana/rnn/model/my_state.py
++++ GPU=gpu0
++++ CODE=/data/disk1/private/ayana/rnn
++++ PYTHONPATH=/data/disk1/private/ayana/rnn
++++ THEANO_FLAGS=floatX=float32,device=gpu0
++++ python /data/disk1/private/ayana/rnn/experiments/nmt/train.py --proto prototype_search_state --state /data/disk1/private/ayana/rnn/model/my_state.py
+Using gpu device 0: Tesla K20c
+2016-01-13 02:18:47,310: __main__: DEBUG: State:
+{'activ': 'lambda x: TT.tanh(x)',
+ 'adaeps': 1e-06,
+ 'adarho': 0.95,
+ 'algo': 'SGD_adadelta',
+ 'backward': True,
+ 'bias': 0.0,
+ 'bias_code': True,
+ 'bigram': True,
+ 'bs': 80,
+ 'check_first_word': True,
+ 'copy_model_freq': 10000,
+ 'copy_model_path': 'model/models',
+ 'cutoff': 1.0,
+ 'cutoff_rescale_length': 0.0,
+ 'dec_rec_gater': 'lambda x: TT.nnet.sigmoid(x)',
+ 'dec_rec_gating': True,
+ 'dec_rec_layer': 'RecurrentLayerWithSearch',
+ 'dec_rec_reseter': 'lambda x: TT.nnet.sigmoid(x)',
+ 'dec_rec_reseting': True,
+ 'decoder_stack': 1,
+ 'decoding_inputs': True,
+ 'deep_out': True,
+ 'dim': 1000,
+ 'dropout': 1.0,
+ 'dropout_rec': 1.0,
+ 'enc_rec_gater': 'lambda x: TT.nnet.sigmoid(x)',
+ 'enc_rec_gating': True,
+ 'enc_rec_layer': 'RecurrentLayer',
+ 'enc_rec_reseter': 'lambda x: TT.nnet.sigmoid(x)',
+ 'enc_rec_reseting': True,
+ 'encoder_stack': 1,
+ 'eps': 1e-10,
+ 'forward': True,
+ 'hookFreq': 500,
+ 'indx_word': '/data/disk1/private/ayana/rnn/model/ivocab.article.pkl',
+ 'indx_word_target': '/data/disk1/private/ayana/rnn/model/ivocab.title.pkl',
+ 'last_backward': False,
+ 'last_forward': False,
+ 'level': 'DEBUG',
+ 'loopIters': 3000000,
+ 'lr': 1.0,
+ 'maxout_part': 2.0,
+ 'minerr': -1,
+ 'minlr': 0,
+ 'n_examples': 3,
+ 'n_samples': 3,
+ 'n_sym_source': 30001,
+ 'n_sym_target': 30001,
+ 'null_sym_source': 30000,
+ 'null_sym_target': 30000,
+ 'on_nan': 'raise',
+ 'oov': 'UNK',
+ 'overwrite': 1,
+ 'patience': 1,
+ 'prefix': 'search_',
+ 'rank_n_activ': 'lambda x: x',
+ 'rank_n_approx': 620,
+ 'rec_gater': 'lambda x: TT.nnet.sigmoid(x)',
+ 'rec_gating': True,
+ 'rec_layer': 'RecurrentLayer',
+ 'rec_reseter': 'lambda x: TT.nnet.sigmoid(x)',
+ 'rec_reseting': True,
+ 'rec_weight_init_fn': 'sample_weights_orth',
+ 'rec_weight_scale': 1.0,
+ 'reload': False,
+ 'reset': -1,
+ 'saveFreq': 10,
+ 'search': True,
+ 'seed': 1234,
+ 'seqlen': 50,
+ 'shuffle': False,
+ 'sort_k_batches': 20,
+ 'source': ['/data/disk1/private/ayana/rnn/model/binarized_text.article.shuf.h5'],
+ 'take_top': True,
+ 'target': ['/data/disk1/private/ayana/rnn/model/binarized_text.title.shuf.h5'],
+ 'timeStop': 44640,
+ 'trainFreq': 1,
+ 'trim_batches': True,
+ 'unary_activ': 'Maxout(2)',
+ 'unk_sym_source': 1,
+ 'unk_sym_target': 1,
+ 'use_infinite_loop': True,
+ 'use_nce': False,
+ 'validFreq': 500,
+ 'weight_init_fn': 'sample_weights_classic',
+ 'weight_noise': False,
+ 'weight_noise_amount': 0.01,
+ 'weight_noise_rec': False,
+ 'weight_scale': 0.01,
+ 'word_indx': '/data/disk1/private/ayana/rnn/model/vocab.article.pkl',
+ 'word_indx_trgt': '/data/disk1/private/ayana/rnn/model/vocab.title.pkl'}
+2016-01-13 02:18:47,310: experiments.nmt.encdec: DEBUG: Create input variables
+2016-01-13 02:18:47,311: experiments.nmt.encdec: DEBUG: Create encoder
+2016-01-13 02:18:47,311: experiments.nmt.encdec: DEBUG: _create_embedding_layers
+2016-01-13 02:18:52,115: experiments.nmt.encdec: DEBUG: _create_transition_layers
+2016-01-13 02:18:59,438: experiments.nmt.encdec: DEBUG: _create_inter_level_layers
+2016-01-13 02:18:59,438: experiments.nmt.encdec: DEBUG: _create_representation_layers
+2016-01-13 02:18:59,946: experiments.nmt.encdec: DEBUG: Build encoding computation graph
+2016-01-13 02:18:59,989: experiments.nmt.encdec: DEBUG: Create backward encoder
+2016-01-13 02:18:59,989: experiments.nmt.encdec: DEBUG: _create_embedding_layers
+2016-01-13 02:19:05,238: experiments.nmt.encdec: DEBUG: _create_transition_layers
+2016-01-13 02:19:11,150: experiments.nmt.encdec: DEBUG: _create_inter_level_layers
+2016-01-13 02:19:11,151: experiments.nmt.encdec: DEBUG: _create_representation_layers
+2016-01-13 02:19:11,538: experiments.nmt.encdec: DEBUG: Build backward encoding computation graph
+2016-01-13 02:19:11,568: experiments.nmt.encdec: DEBUG: Create decoder
+2016-01-13 02:19:11,568: experiments.nmt.encdec: DEBUG: _create_embedding_layers
+2016-01-13 02:19:17,233: experiments.nmt.encdec: DEBUG: _create_transition_layers
+2016-01-13 02:19:17,233: experiments.nmt.encdec: DEBUG: RecurrentLayerWithSearch is used
+2016-01-13 02:19:26,918: experiments.nmt.encdec: DEBUG: _create_inter_level_layers
+2016-01-13 02:19:26,918: experiments.nmt.encdec: DEBUG: _create_initialization_layers
+2016-01-13 02:19:27,084: experiments.nmt.encdec: DEBUG: _create_decoding_layers
+2016-01-13 02:19:28,312: experiments.nmt.encdec: DEBUG: _create_readout_layers
+2016-01-13 02:19:33,436: experiments.nmt.encdec: DEBUG: Build log-likelihood computation graph
+2016-01-13 02:19:33,690: groundhog.layers.cost_layers: DEBUG: Get grads
+2016-01-13 02:19:36,718: groundhog.layers.cost_layers: DEBUG: Got grads
+2016-01-13 02:19:36,718: experiments.nmt.encdec: DEBUG: Build sampling computation graph
+2016-01-13 02:19:37,110: experiments.nmt.encdec: DEBUG: Create auxiliary variables
+2016-01-13 02:19:37,110: experiments.nmt.encdec: DEBUG: Compile sampler
+2016-01-13 02:19:41,475: experiments.nmt.encdec: DEBUG: Model params:
+['A_dec_transition_0',
+ 'B_dec_transition_0',
+ 'D_dec_transition_0',
+ 'G_back_enc_transition_0',
+ 'G_dec_transition_0',
+ 'G_enc_transition_0',
+ 'R_back_enc_transition_0',
+ 'R_dec_transition_0',
+ 'R_enc_transition_0',
+ 'W1_dec_deep_softmax',
+ 'W2_dec_deep_softmax',
+ 'W_0_back_enc_input_embdr_0',
+ 'W_0_back_enc_reset_embdr_0',
+ 'W_0_back_enc_update_embdr_0',
+ 'W_0_dec_approx_embdr',
+ 'W_0_dec_dec_inputter_0',
+ 'W_0_dec_dec_reseter_0',
+ 'W_0_dec_dec_updater_0',
+ 'W_0_dec_hid_readout_0',
+ 'W_0_dec_initializer_0',
+ 'W_0_dec_input_embdr_0',
+ 'W_0_dec_prev_readout_0',
+ 'W_0_dec_repr_readout',
+ 'W_0_dec_reset_embdr_0',
+ 'W_0_dec_update_embdr_0',
+ 'W_0_enc_approx_embdr',
+ 'W_0_enc_input_embdr_0',
+ 'W_0_enc_reset_embdr_0',
+ 'W_0_enc_update_embdr_0',
+ 'W_back_enc_transition_0',
+ 'W_dec_transition_0',
+ 'W_enc_transition_0',
+ 'b_0_back_enc_input_embdr_0',
+ 'b_0_dec_approx_embdr',
+ 'b_0_dec_hid_readout_0',
+ 'b_0_dec_initializer_0',
+ 'b_0_dec_input_embdr_0',
+ 'b_0_enc_approx_embdr',
+ 'b_0_enc_input_embdr_0',
+ 'b_dec_deep_softmax']
+2016-01-13 02:19:41,475: __main__: DEBUG: Load data
+2016-01-13 02:19:41,475: __main__: DEBUG: Compile trainer
+2016-01-13 02:19:50,248: groundhog.trainer.SGD_adadelta: DEBUG: Constructing grad function
+2016-01-13 02:19:50,393: groundhog.trainer.SGD_adadelta: DEBUG: Compiling grad function
+2016-01-13 02:20:37,825: groundhog.trainer.SGD_adadelta: DEBUG: took 47.4319489002
+2016-01-13 02:20:42,128: __main__: DEBUG: Run training
+Validation computed every 500
+GPU status : Used 2137.539 Mb Free 2662.023 Mb,total 4799.562 Mb [context start]
+Saving the model...
+Model saved, took 4.155564785
+Saving the model...
+2016-01-13 02:20:46,368: groundhog.datasets.TM_dataset: DEBUG: 4708347 entries
+2016-01-13 02:20:46,368: groundhog.datasets.TM_dataset: DEBUG: Starting from the entry 0
+Model saved, took 8.19210290909
+mkdir -p model/models/iter_0
+cp search_* model/models/iter_0
+.. iter    0 cost 6979.173 grad_norm 9.21e+01 log2_p_word 1.49e+01 log2_p_expl 1.26e+02 step time  1.804 sec whole time 66.482 sec lr 1.00e+00
+Input: revenge is wales &apos; main motivation when it faces fiji in a rugby international at millennium stadium on friday . <eol>
+Target: wales out to bury nantes ghost against fiji <eol>
+
+

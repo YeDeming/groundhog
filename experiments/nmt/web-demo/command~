@@ -1,0 +1,1 @@
+THEANO_FLAGS='floatX=float32,device=cpu' python sample_server.py --port=8888 --beam-search --state=/home/meepo/summary/GroundHog-master/experiments/nmt/search_state.pkl /home/meepo/summary/GroundHog-master/experiments/nmt/your_model_file.npz
